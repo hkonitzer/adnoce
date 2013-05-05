@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'DotMatrixRegular';
+    src: url('dotmatrx.eot');
+    src: url('dotmatrx.eot') format('embedded-opentype'),
+         url('dotmatrx.woff') format('woff'),
+         url('dotmatrx.ttf') format('truetype'),
+         url('dotmatrx.svg#DotMatrixRegular') format('svg');
+}
