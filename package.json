@@ -1,7 +1,7 @@
 {
   "name": "adnoce",
-  "description": "Webtracking Tool",
-  "version": "0.1.0",
+  "description": "Webtracking Tool für Express based sites backed by MongoDB",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:hkonitzer/adnoce.git"
@@ -23,11 +23,12 @@
     "socket.io-client"  : "0.x",
 	  "mongodb"	          : "1.x",
 	  "mongoose"	        : "3.x",
-    "log"               : "1.x"
+    "log"               : "1.x",
+    "should"            : "x"
   },
   "engines": {
-    "node": ">= 0.6.x"
+    "node": ">= 0.8.x"
   },
-  "readme": "# Webtracking based on MongoDB",
+  "readme": "# Webtracking Tool für Express based sites backed by MongoDB",
   "readmeFilename": "README.md"
 }
