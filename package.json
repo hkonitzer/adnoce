@@ -23,8 +23,14 @@
     "socket.io-client"  : "0.x",
 	  "mongodb"	          : "1.x",
 	  "mongoose"	        : "3.x",
-    "log"               : "1.x",
-    "should"            : "x"
+    "log"               : "1.x"
+  },
+  "devDependencies": {
+    "mocha"   : "*",
+    "should"  : "*"
+  },
+  "scripts": {
+    "test": "mocha"
   },
   "engines": {
     "node": ">= 0.8.x"
