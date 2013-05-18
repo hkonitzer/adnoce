@@ -141,6 +141,15 @@ adnoce.addEvent(typeId, eventName, SessionId, keyvalueObjectArray);
 * SessionId: this should be the session id from the current request in order to track this event along with page impressions
 * keyvalueObjectArray: an array with key/value pairs as object
 
+Consider following example to catch node.js exception's:
+```js
+process.on('uncaughtException', function (err) {  
+  adnoce.addEvent(100, 'error',  'internal', [{ key: 'location', value: 'uncaughtException' }, { key: 'error', value: err }]);
+});
+```
+We dont have an session id here, so we set this to "internal".
+See the [Node.js Doc](http://nodejs.org/api/process.html#process_event_uncaughtexception) for more information about "uncaughtException".
+
 You find all events in the adnoce-events collection. These events are also displayed in the adnoce-server view
 
 ### Access the data
