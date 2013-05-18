@@ -212,6 +212,7 @@ It is possible to connect to every running adnoce-core component if you know its
 ## Example screenshot for adnoce-server
 
 ![Adnoce-Server in Midori Browser running on an Raspberry Pi](example-pic_adnoceserver-htmloutput.jpg)
+Adnoce-Server in Midori Browser running on an Raspberry Pi
 
 ## License
 
