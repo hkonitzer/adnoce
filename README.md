@@ -136,7 +136,7 @@ The addEvent funtion takes four arguments:
 adnoce.addEvent(typeId, eventName, SessionId, keyvalueObjectArray);
 ```
 
-* typeId: should be 200 in order to work with adnoce-server, but can be set to any number above 1 (1 is reserved for page impressions)
+* typeId: should be 100 (error events) or 200 (other events) in order to work with adnoce-server, but can be set to any number above 1 (1 is reserved for page impressions)
 * eventName: a name for your event
 * SessionId: this should be the session id from the current request in order to track this event along with page impressions
 * keyvalueObjectArray: an array with key/value pairs as object
