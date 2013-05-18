@@ -50,6 +50,13 @@ body {
   display: table;
   clear: both;
 }
+.addfilter {
+  cursor: pointer;
+}
+.filterelem {
+  padding-left: 1em;  
+  cursor: pointer;
+}
 .chart rect {
   fill: steelblue;
   stroke: white;
