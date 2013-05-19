@@ -50,7 +50,16 @@ describe('clienttracking', function(){
 describe('clienttracking', function(){
   describe('#mergeJSObjects(...) with two objects', function(){
     it('should return an merged objects from given arguments', function(){
-      var answer = clienttracking.mergeJSObjects({'A' : 1 , 'B' : '2'});      
+      var answer = clienttracking.mergeJSObjects({'A' : 1}, {'B' : '2'});      
+      answer.should.have.property('A');
+      answer.should.have.property('B');
+      answer['A'].should.be.equal(1);
+      answer['B'].should.be.equal('2');      
+    })
+  })
+  describe('#mergeJSObjects(...) with objects and null argument', function(){
+    it('should return the first objects and ignore the second', function(){
+      var answer = clienttracking.mergeJSObjects({'A' : 1, 'B' : '2'}, null);      
       answer.should.have.property('A');
       answer.should.have.property('B');
       answer['A'].should.be.equal(1);
