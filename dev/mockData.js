@@ -15,9 +15,9 @@ var executeViewQuery = function (sessionID, requestHeaders, additionalData) {
   });
   return deferred.promise;          
 } 
-var executeEventQuery = function(type, name, sessionId, additionalData) {
+var executeEventQuery = function(type, name, sessionId, additionalData, eventDate) {  
   var deferred = new Deferred();
-  clienttracking.addEvent(type, name, sessionId, additionalData, function(err, data) {
+  clienttracking.addEvent(type, name, sessionId, additionalData, eventDate, function(err, data) {    
     if (err === null) deferred.resolve(data);
     else deferred.reject(err);
   });
@@ -48,25 +48,27 @@ for (var v = 0, vx = 200; v < vx; ++v) {
   if (v % 10 === 0) {
     ++pathstringID;    
   }
-  requestHeaders.referer = 'http://www.example.com/path'+pathstringID;
+  var hour = Math.floor(Math.random() * (23 - 1 + 1)) + 1;
+  var minute = Math.floor(Math.random() * (59 - 1 + 1)) + 1;
+  var second = Math.floor(Math.random() * (59 - 1 + 1)) + 1;
   var value = Math.floor(Math.random() * (1000 - 1 + 1)) + 1;
   var eventname = [];
   for (var e = 0, ex = 8; e < ex; ++e) eventname.push(String.fromCharCode(Math.floor(Math.random() * (90 - 65 + 1)) + 65));
   var data = { key: 'test', value: value };
-  arrayOfPromises.push(executeEventQuery(200, eventname.join(''), 'testing', data));  
+  arrayOfPromises.push(executeEventQuery(200, eventname.join(''), 'testing', data, new Date(acutalDate.getFullYear(), acutalDate.getMonth(), acutalDate.getDate(), hour, minute, second)));  
 }
 // generate 200 events
-
 for (var v = 0, vx = 200; v < vx; ++v) {
   if (v % 10 === 0) {
     ++pathstringID;    
-  }
-  requestHeaders.referer = 'http://www.example.com/path'+pathstringID;
-  var value = Math.floor(Math.random() * (1000 - 1 + 1)) + 1;
+  }  
+  var hour = Math.floor(Math.random() * (23 - 1 + 1)) + 1;
+  var minute = Math.floor(Math.random() * (59 - 1 + 1)) + 1;
+  var second = Math.floor(Math.random() * (59 - 1 + 1)) + 1;
   var message = [];
   for (var e = 0, ex = (Math.floor(Math.random() * (40 - 1 + 1)) + 1); e < ex; ++e) message.push(String.fromCharCode(Math.floor(Math.random() * (90 - 65 + 1)) + 65));
   var data = { key: 'message', value: message.join('') };
-  arrayOfPromises.push(executeEventQuery(100, 'error', 'testing', data));  
+  arrayOfPromises.push(executeEventQuery(100, 'error', 'testing', data, new Date(acutalDate.getFullYear(), acutalDate.getMonth(), acutalDate.getDate(), hour, minute, second)));  
 }
 
 var group = q.all(arrayOfPromises); 
