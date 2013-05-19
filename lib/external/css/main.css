@@ -6,17 +6,23 @@ body {
   background-color: black;
   color: #00CC00;
 }
-.charts {
-  border: solid 0.1em #002e00;        
+.grbor {
+  border: solid 0.1em #002e00;
+}
+.borpad {
+  padding: 0.2em;
+  margin-bottom: 0.2em;
+  margin-right: 0.2em;
+}
+.charts {       
   width: 47%;
   margin-left: 1em;
   margin-bottom: 1em;
   float: left;
 }
 #log {
-  border: solid 0.1em #002e00;        
   width: 50%;       
-  height: 90%;
+  height: 88%;
   min-height: 610px; 
   float: left;
 }
