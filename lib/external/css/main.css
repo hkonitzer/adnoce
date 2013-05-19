@@ -1,5 +1,5 @@
 html, body {
-  height: 100%;
+  height: 99%;
 }
 body {
   font-family: Sans-Serif;
@@ -16,6 +16,7 @@ body {
 }
 .charts {       
   width: 47%;
+  min-height: 105px;
   margin-left: 1em;
   margin-bottom: 1em;
   float: left;
