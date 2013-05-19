@@ -43,8 +43,8 @@ for (var v = 0, vx = 200; v < vx; ++v) {
   additionalData.timestamp = new Date(acutalDate.getFullYear(), acutalDate.getMonth(), acutalDate.getDate(), hour, minute, second);
   arrayOfPromises.push(executeViewQuery('testing', requestHeaders, additionalData));  
 }
-// generate 200 events
-for (var v = 0, vx = 200; v < vx; ++v) {
+// generate 400 events
+for (var v = 0, vx = 400; v < vx; ++v) {
   if (v % 10 === 0) {
     ++pathstringID;    
   }
@@ -57,7 +57,7 @@ for (var v = 0, vx = 200; v < vx; ++v) {
   var data = { key: 'test', value: value };
   arrayOfPromises.push(executeEventQuery(200, eventname.join(''), 'testing', data, new Date(acutalDate.getFullYear(), acutalDate.getMonth(), acutalDate.getDate(), hour, minute, second)));  
 }
-// generate 200 events
+// generate 200 error events
 for (var v = 0, vx = 200; v < vx; ++v) {
   if (v % 10 === 0) {
     ++pathstringID;    
