@@ -26,8 +26,9 @@
     "log"               : "1.x"
   },
   "devDependencies": {
-    "mocha"   : "*",
-    "should"  : "*"
+    "mocha"       : "*",
+    "should"      : "*",
+    "promised-io" : "*"
   },
   "scripts": {
     "test": "mocha"
