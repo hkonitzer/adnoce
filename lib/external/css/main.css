@@ -1,3 +1,6 @@
+html, body {
+  height: 100%;
+}
 body {
   font-family: Sans-Serif;
   background-color: black;
@@ -13,7 +16,8 @@ body {
 #log {
   border: solid 0.1em #002e00;        
   width: 50%;       
-  min-height: 573px; 
+  height: 90%;
+  min-height: 610px; 
   float: left;
 }
 .loglinecontentbot {
