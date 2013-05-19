@@ -1,12 +1,5 @@
-@font-face {
-  font-family: 'DotMatrixRegular';
-  src: local('DotMatrixRegular');        
-  src: url('<%=cdnurl%>/fonts/dotmatrx.eot');
-  src: url('<%=cdnurl%>/fonts/dotmatrx.ttf');
-  src: url('<%=cdnurl%>/fonts/dotmatrx.woff');        
-}
 body {
-  font-family:'DotMatrixRegular',Sans-Serif;
+  font-family: Sans-Serif;
   background-color: black;
   color: #00CC00;
 }
