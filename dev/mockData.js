@@ -30,32 +30,57 @@ var additionalData = { adnocetype: 100, timestamp: null }
 var arrayOfPromises = [];
 var acutalDate = new Date();
 
-// generate 200 views (every 10 requests the path changes)
+// generate 200 views 
 var pathstringID = 1;
 for (var v = 0, vx = 200; v < vx; ++v) {
   if (v % 10 === 0) {
-    ++pathstringID;    
+    pathstringID = 10;
+  } else {
+    pathstringID = Math.floor(Math.random() * (50 - 10 + 1)) + 10;    
   }
   requestHeaders.referer = 'http://www.example.com/path'+pathstringID;
-  var hour = Math.floor(Math.random() * (23 - 1 + 1)) + 1;
+  var hour = Math.floor(Math.random() * (23 - 1 + 1)) + 1; // Math.floor(Math.random() * (max - min + 1)) + min;
   var minute = Math.floor(Math.random() * (59 - 1 + 1)) + 1;
   var second = Math.floor(Math.random() * (59 - 1 + 1)) + 1;
   additionalData.timestamp = new Date(acutalDate.getFullYear(), acutalDate.getMonth(), acutalDate.getDate(), hour, minute, second);
   arrayOfPromises.push(executeViewQuery('testing', requestHeaders, additionalData));  
 }
 // generate 400 events
-for (var v = 0, vx = 400; v < vx; ++v) {
-  if (v % 10 === 0) {
-    ++pathstringID;    
-  }
+for (var v = 0, vx = 400; v < vx; ++v) {  
   var hour = Math.floor(Math.random() * (23 - 1 + 1)) + 1;
   var minute = Math.floor(Math.random() * (59 - 1 + 1)) + 1;
   var second = Math.floor(Math.random() * (59 - 1 + 1)) + 1;
   var value = Math.floor(Math.random() * (1000 - 1 + 1)) + 1;
-  var eventname = [];
-  for (var e = 0, ex = 8; e < ex; ++e) eventname.push(String.fromCharCode(Math.floor(Math.random() * (90 - 65 + 1)) + 65));
+  var eventname = null;
+  if (v % 10 === 0) {
+    var eventnameA = [];
+    for (var e = 0, ex = 8; e < ex; ++e) eventnameA.push(String.fromCharCode(Math.floor(Math.random() * (90 - 65 + 1)) + 65));
+    eventname = eventnameA.join('');
+  } else {
+    switch (Math.floor(Math.random() * (5 - 1 + 1)) + 1) {
+      case 5:
+        eventname = 'login';
+        break;
+      case 4:
+        eventname = 'login';
+        break;
+      case 3:
+        eventname = 'search';
+        break;
+      case 2:
+        eventname = 'register';
+        break;
+      case 1:
+        eventname = 'order';
+        break;
+      default:
+        eventname = 'generic';
+    }
+  }
+  
+  
   var data = { key: 'test', value: value };
-  arrayOfPromises.push(executeEventQuery(200, eventname.join(''), 'testing', data, new Date(acutalDate.getFullYear(), acutalDate.getMonth(), acutalDate.getDate(), hour, minute, second)));  
+  arrayOfPromises.push(executeEventQuery(200, eventname, 'testing', data, new Date(acutalDate.getFullYear(), acutalDate.getMonth(), acutalDate.getDate(), hour, minute, second)));  
 }
 // generate 200 error events
 for (var v = 0, vx = 200; v < vx; ++v) {
