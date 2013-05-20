@@ -15,16 +15,22 @@ body {
   margin-right: 0.2em;
 }
 .charts {       
-  width: 47%;
-  min-height: 105px;
-  margin-left: 1em;
-  margin-bottom: 1em;
+  width: 48%;
+  min-height: 105px;  
+  margin-bottom: 0.7em;
+  float: left;
+}
+.charts2 {       
+  width: 23.5%;
+  min-height: 105px;  
+  margin-bottom: 0.7em;
   float: left;
 }
 #log {
   width: 50%;       
   height: 85%;
-  min-height: 610px; 
+  min-height: 610px;
+  margin-right: 0.7em; 
   float: left;
 }
 .loglinecontentbot {
@@ -62,6 +68,6 @@ body {
   cursor: pointer;
 }
 .chart rect {
-  fill: steelblue;
+  fill: rgb(10, 46, 78);
   stroke: white;
 }
