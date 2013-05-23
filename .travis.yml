@@ -8,4 +8,8 @@ services:
 branches:
   only:
     - master
+    - dev
     - stable
+notifications:
+  email:
+    - hkonitzer+travis@gmail.com
