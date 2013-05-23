@@ -4,6 +4,9 @@
 Webtracking tool for [Express](https://github.com/visionmedia/express/) and [jQuery](http://jquery.com) based sites with integrated server.
 Tracks page impressions and server side events and stores them in [MongoDB](http://www.mongodb.org/) (Mongoose) 
 
+[![Build Status Master](https://travis-ci.org/hkonitzer/adnoce.png?branch=master)](https://travis-ci.org/hkonitzer/adnoce)
+[![Build Status Dev](https://travis-ci.org/hkonitzer/adnoce.png?branch=dev)](https://travis-ci.org/hkonitzer/adnoce)
+
 ## Features
 
   * Built on [Moongose](http://mongoosejs.com/) and [Express](https://github.com/visionmedia/express/)
