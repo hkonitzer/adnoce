@@ -105,6 +105,18 @@ Example for a stand-alone server, main app is running on www.example.com:
 
 The server component uses websockets to communicate in near realtime with the adnoce core component. Every time a page impression or event is stored in the database, a message is emitted to the connected clients with the full payload of the record.
 
+You can also forward some server stats to adnoce-server via your app. Import the [os](http://nodejs.org/api/os.html) lib and use the pushServerHealth() function from adnoce-core.
+
+The following example updates server load and free memory every 10 seconds: 
+
+```js
+var os = require('os');
+var getOSForAdnoce = function() {  
+  adnoce.pushServerHealth(os);
+}
+setInterval(getOSForAdnoce, 10000);
+```
+
 ### Store additional data along with the page impressions
 
 You can add unlimited key/value pairs to the adnoce-visit collection.

@@ -71,3 +71,6 @@ body {
   fill: rgb(10, 46, 78);
   stroke: white;
 }
+.serverinfo {
+  display: none;
+}
